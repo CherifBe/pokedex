@@ -1,0 +1,43 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+ul,li {
+  list-style: none;
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+}
+
+.pokemon-card{
+  width: 60%;
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 10;
+}
+
+h3{
+  text-align: center;
+}
+
+img{
+  width: 200px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.pokemon-type{
+  display:flex;
+  margin: auto;
+  justify-content: space-around;
+}
+
