@@ -13,7 +13,14 @@ function PokemonList({ data }) {
               <h2>Types:</h2>
               <div className="pokemon-type">
                 {pokemon.types.map((type, index) => (
-                  <div key={index}><img src={type.image} className='img-type' alt={type.name} /> - {type.name}</div>
+                  <div key={index}>
+                    <img
+                      src={type.image}
+                      className="img-type"
+                      alt={type.name}
+                    />{' '}
+                    - {type.name}
+                  </div>
                 ))}
               </div>
             </Link>

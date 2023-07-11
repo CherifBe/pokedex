@@ -27,14 +27,25 @@ function Detail() {
   //  }
 
   return (
-   <div> 
-    <PokemonCard dataPokemon={dataPokemon} />
-    <div className='btns'>
-      {id == 1 ? <div>Pas de précédent</div> : <button><Link to={`/detail/${(parseInt(id)-1)}`}>Précédent</Link></button> }
-      {id == 151 ? <div>Pas de suivant</div> : <button><Link to={`/detail/${(parseInt(id)+1)}`}>Suivant</Link></button> }
+    <div>
+      <PokemonCard dataPokemon={dataPokemon} />
+      <div className="btns">
+        {id == 1 ? (
+          <div>Pas de précédent</div>
+        ) : (
+          <button>
+            <Link to={`/detail/${parseInt(id) - 1}`}>Précédent</Link>
+          </button>
+        )}
+        {id == 151 ? (
+          <div>Pas de suivant</div>
+        ) : (
+          <button>
+            <Link to={`/detail/${parseInt(id) + 1}`}>Suivant</Link>
+          </button>
+        )}
+      </div>
     </div>
-
-  </div>
   );
 }
 

@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 function PokemonCard({ dataPokemon }) {
   return (
     <div className="container-card">
-      <div className='pokemon-portrait'>
+      <div className="pokemon-portrait">
         <h1>{dataPokemon.name.fr}</h1>
-        <div className='pokemon-image'>
+        <div className="pokemon-image">
           <div>
             <img src={dataPokemon.sprites.regular} alt={dataPokemon.name.fr} />
           </div>
           <div>
-          <img src={dataPokemon.sprites.shiny} alt={dataPokemon.name.fr} />
+            <img src={dataPokemon.sprites.shiny} alt={dataPokemon.name.fr} />
           </div>
         </div>
       </div>
-      <div className='sub-container'>
+      <div className="sub-container">
         <div>
           <h2>Types:</h2>
           <ul>
@@ -30,9 +30,7 @@ function PokemonCard({ dataPokemon }) {
               dataPokemon.evolution.next.map((evolution, index) => (
                 <li key={index}>
                   <Link to={`/detail/${evolution.pokedexId}`}>
-                    <span className='link-to-evolution'>
-                    {evolution.name}
-                    </span>
+                    <span className="link-to-evolution">{evolution.name}</span>
                   </Link>{' '}
                   à partir du {evolution.condition}
                 </li>
@@ -47,11 +45,19 @@ function PokemonCard({ dataPokemon }) {
           <h2>Caractéristiques</h2>
           <ul>
             <li>Taille: {dataPokemon.height}</li>
-            <li>Poids: {dataPokemon.weight != null ? dataPokemon.weight : 'Aucune information'}</li>
-            {dataPokemon.egg_groups != null ?
-            (dataPokemon.egg_groups.map((group, index) => (
-              <li key={index}>{group}</li>
-            ))) : <p>Aucun groupe</p> }
+            <li>
+              Poids:{' '}
+              {dataPokemon.weight != null
+                ? dataPokemon.weight
+                : 'Aucune information'}
+            </li>
+            {dataPokemon.egg_groups != null ? (
+              dataPokemon.egg_groups.map((group, index) => (
+                <li key={index}>{group}</li>
+              ))
+            ) : (
+              <p>Aucun groupe</p>
+            )}
           </ul>
         </div>
         <div>
@@ -73,8 +79,8 @@ function PokemonCard({ dataPokemon }) {
             <li>Speed: {dataPokemon.stats.vit}</li>
           </ul>
         </div>
-        </div>
       </div>
+    </div>
   );
 }
 

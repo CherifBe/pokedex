@@ -4,10 +4,13 @@ const Navigation = ({ children }) => {
   return (
     <>
       <div className="header-navbar">
-        <header>Pokedex</header>
-        <ul>
+        <header>Pokedex + Weather</header>
+        <ul className='navbar'>
           <li>
-            <Link to="/">Homepage</Link>
+            <Link to="/">Pokedex</Link>
+          </li>
+          <li>
+            <Link to="/weather">Weather</Link>
           </li>
         </ul>
       </div>
